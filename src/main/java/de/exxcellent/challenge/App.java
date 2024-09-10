@@ -1,5 +1,10 @@
 package de.exxcellent.challenge;
 
+import de.exxcellent.challenge.ChallengeSolver.ChallengeSolver;
+import de.exxcellent.challenge.DataLoader.CsvDataLoader;
+
+import java.util.List;
+
 /**
  * The entry class for your solution. This class is only aimed as starting point and not intended as baseline for your software
  * design. Read: create your own classes and packages as appropriate.
@@ -14,12 +19,13 @@ public final class App {
      */
     public static void main(String... args) {
 
-        // Your preparation code …
+        CsvDataLoader csvDataLoader = new CsvDataLoader();
+        List<String> daysWithSmallestTemperatureSpread = ChallengeSolver.solveChallenge(csvDataLoader,
+                "src/main/resources/de/exxcellent/challenge/weather.csv", "MxT", "MnT");
 
-        String dayWithSmallestTempSpread = "Someday";     // Your day analysis function call …
-        System.out.printf("Day with smallest temperature spread : %s%n", dayWithSmallestTempSpread);
-
-        String teamWithSmallestGoalSpread = "A good team"; // Your goal analysis function call …
-        System.out.printf("Team with smallest goal spread       : %s%n", teamWithSmallestGoalSpread);
+        List<String> teamsWithSmallestGoalDifference = ChallengeSolver.solveChallenge(csvDataLoader,
+                "src/main/resources/de/exxcellent/challenge/football.csv", "Goals", "Goals Allowed");
+        System.out.printf("Day with smallest temperature spread : %s%n", daysWithSmallestTemperatureSpread);
+        System.out.printf("Team with smallest goal spread       : %s%n", teamsWithSmallestGoalDifference);
     }
 }
