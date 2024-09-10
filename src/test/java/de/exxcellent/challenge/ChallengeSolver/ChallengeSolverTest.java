@@ -3,7 +3,6 @@ package de.exxcellent.challenge.ChallengeSolver;
 import de.exxcellent.challenge.DataLoader.ChallengeDataLoader;
 import de.exxcellent.challenge.DataObjects.ChallengeDataStructure;
 import de.exxcellent.challenge.Exceptions.WrongFormatForTableException;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
